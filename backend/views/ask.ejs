@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Assistant</title>
+    <link rel="stylesheet" href="/ask.css" </head>
+
+<body>
+    <h1>AI Study Assistant</h1>
+
+    <h2>File name: <%= filename %>
+    </h2>
+
+    <form id="question-form" data-document-id="<%= documentId %>">
+        <label for="question">Please enter your question:</label>
+
+        <input type="text" id="question" name="question" placeholder="Ask something about your PDF..." required>
+
+        <button id="submit_btn" type="submit">Ask</button>
+    </form>
+
+    <p id="error" style="color: red;"></p>
+
+    <h3>Answer:</h3>
+    <div id="answer"></div>
+    <div id="sources"></div>
+
+    <script src="/chat.js"></script>
+</body>
+
+</html>

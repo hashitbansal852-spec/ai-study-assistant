@@ -1,0 +1,166 @@
+/* ===== Design tokens (same palette as home.css) ===== */
+:root {
+    --bg: #f3f5f9;
+    --band: #e8edf5;
+    --surface: #fbfcfe;
+    --border: #d3dae5;
+    --text: #28324a;
+    --text-muted: #5f6b7e;
+    --accent: #3f5f8f;
+    --accent-hover: #34507a;
+    --accent-text: #f6f8fc;
+    --danger: #a4373a;
+    --focus: #6b8fc4;
+    --radius: 8px;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--bg);
+}
+
+body {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 56px 24px 48px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ===== Headings ===== */
+h1 {
+    margin: 0 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 32px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+h3 {
+    margin: 32px 0 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ===== Question form ===== */
+#question-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+#question-form label {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+#question {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#question::placeholder {
+    color: var(--text-muted);
+}
+
+/* ===== Button ===== */
+#submit_btn {
+    padding: 12px 20px;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    color: var(--accent-text);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#submit_btn:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+#submit_btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* ===== Error ===== */
+#error {
+    min-height: 1.6em;
+    margin: 16px 0 0;
+    font-size: 0.95rem;
+    color: var(--danger) !important; /* overrides the inline red in the HTML */
+}
+
+/* ===== Answer ===== */
+#answer {
+    min-height: 120px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    white-space: pre-wrap;      /* keeps paragraphs and line breaks from the AI */
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+#answer:empty::before {
+    content: "Your answer will appear here.";
+    color: var(--text-muted);
+}
+
+/* ===== Keyboard focus ===== */
+#question:focus-visible,
+#submit_btn:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 36px 16px 32px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    #question-form,
+    #answer {
+        padding: 20px;
+    }
+}

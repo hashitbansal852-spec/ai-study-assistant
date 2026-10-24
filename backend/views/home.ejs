@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Assistant</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <span class="brand">AI Study Assistant</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>AI Study Assistant</h1>
+            <p class="lead">Upload your PDF to start learning!</p>
+
+            <form id="upload-form" enctype="multipart/form-data">
+                <label for="pdf">Upload your PDF:</label>
+                <input type="file" id="pdf" name="pdf" accept=".pdf" required>
+                <p class="hint">Only PDF files are accepted.</p>
+                <button id="submit_btn" type="submit">Upload PDF</button>
+            </form>
+
+            <p id="error" style="color: red;"></p>
+        </section>
+
+        <section class="section">
+            <h2>How it works</h2>
+            <ol class="step-list">
+                <li>
+                    <span class="step-number">1</span>
+                    <h3>Upload your PDF</h3>
+                    <p>Choose your notes, textbook chapter, or any study material.</p>
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <h3>The AI reads it</h3>
+                    <p>Your document is processed so the assistant understands its content.</p>
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <h3>Start learning</h3>
+                    <p>Ask questions and get clear answers based on your own material.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>What you can do</h2>
+            <div class="feature-grid">
+                <article class="feature">
+                    <h3>Ask questions</h3>
+                    <p>Get answers drawn directly from your document.</p>
+                </article>
+                <article class="feature">
+                    <h3>Understand faster</h3>
+                    <p>Get difficult topics explained in simple words.</p>
+                </article>
+                <article class="feature">
+                    <h3>Revise with ease</h3>
+                    <p>Review key points before an exam.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>AI Study Assistant &copy; 2026</p>
+    </footer>
+
+    <script src="/upload.js"></script>
+</body>
+
+</html>
+             
